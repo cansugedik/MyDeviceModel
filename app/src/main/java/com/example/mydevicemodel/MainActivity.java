@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txt_model, txt_soltus, txt_sagtus;
+    private EditText txtModel, txtSoltus, txtSagtus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,22 +20,22 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        InitControls();
+        initControls();
 
-        InitControlEvents();
+        initControlEvents();
     }
 
-    private void InitControls() {
-        txt_model = findViewById(R.id.txt_model);
-        txt_soltus = findViewById(R.id.txt_soltus);
-        txt_sagtus = findViewById(R.id.txt_sagtus);
+    private void initControls() {
+        txtModel = findViewById(R.id.txtModel);
+        txtSoltus = findViewById(R.id.txtSoltus);
+        txtSagtus = findViewById(R.id.txtSagtus);
     }
 
-    private void InitControlEvents() {
+    private void initControlEvents() {
 
-        txt_model.setText(getDeviceName());
+        txtModel.setText(getDeviceName());
 
-        txt_model.setOnKeyListener(new View.OnKeyListener() {
+        txtModel.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
@@ -44,21 +44,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        txt_soltus.setOnKeyListener(new View.OnKeyListener() {
+        txtSoltus.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                txt_soltus.setText(String.valueOf(event.getScanCode()));
+                txtSoltus.setText(String.valueOf(event.getScanCode()));
 
                 return false;
             }
         });
 
-        txt_sagtus.setOnKeyListener(new View.OnKeyListener() {
+        txtSagtus.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                txt_sagtus.setText(String.valueOf(event.getScanCode()));
+                txtSagtus.setText(String.valueOf(event.getScanCode()));
 
                 return false;
             }
@@ -67,11 +67,16 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(getDeviceName());
     }
 
-    public static String getDeviceName() {
+    public String getDeviceName() {
         String manufacturer = Build.MANUFACTURER;
         String model = Build.MODEL;
 
-        return manufacturer + " " + model;
+        String myString = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            myString = String.join(manufacturer, model);
+        }
+
+        return myString;
     }
 
 }

@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/txt_model"
+        android:id="@+id/txtModel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -23,13 +23,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txt_soltus"
+        android:id="@+id/txtSoltus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-
         android:hint="sol tus"
         android:imeOptions="actionDone"
         android:inputType="text"
@@ -38,13 +37,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txt_sagtus"
+        android:id="@+id/txtSagtus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-
         android:hint="sag tus"
         android:imeOptions="actionDone"
         android:inputType="text"
