@@ -11,3 +11,5 @@ Sol tuş kısmında basılan sol tuş bilgisi yansıtılmaktadır
 
 
 ![image](https://user-images.githubusercontent.com/35520725/84368451-4364f280-abde-11ea-8752-43be2f836223.png)
+
+![image (1)](https://user-images.githubusercontent.com/35520725/84368637-7effbc80-abde-11ea-9ba9-96b895455466.png)
